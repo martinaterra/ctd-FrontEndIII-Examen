@@ -4,14 +4,6 @@
   background-color: black;
 }
 
-.titulo{
-  color:white;
-  font-size:40px;
-  font-family: "Hina Mincho", serif;
-  padding-bottom: 30px;
-  
-}
-
 .layout {
   height: 100vh;
   max-width: 500px;

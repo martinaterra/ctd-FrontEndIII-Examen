@@ -9,6 +9,7 @@ class Recordatorio extends Component {
         <ul>{this.props.historial}</ul>
       </div>
     );
+
   }
 }
 
