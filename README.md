@@ -2,5 +2,5 @@
 Evaluación Parcial de la materia Front End III - CTD
 
 
-Link a codesandbox: https://codesandbox.io/s/serverless-water-uvllg
+Link a codesandbox: https://codesandbox.io/s/examen-parcial-terrazamartina-vhi16
 
