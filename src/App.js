@@ -21,26 +21,26 @@ export default class App extends Component {
   }
 
   handleClick(opcion) {
+    let contadorAux = 0;
+
     if (this.state.contador >= 7) {
-      alert("FIN!");
-      return;
+      alert("Fin!");
+    } else if (this.state.seleccionPrevia === opcion) {
+      contadorAux = 2
+    }
+    else if (this.state.seleccionPrevia === "A" && opcion === "B") {
+      contadorAux = 3
+    } else if (this.state.seleccionPrevia === "B" && opcion === "A") {
+      contadorAux = 1
+    } else if (opcion === "A") {
+      contadorAux = 1
+    } else {
+      contadorAux = 2
     }
 
-    let posicion = opcion === "A" ? 1 : 2;
-
-    if (this.historial.length > 0) {
-      if (this.state.seleccionPrevia === "A" && opcion === "B") {
-        posicion = 3
-      }
-      else if (this.state.seleccionPrevia === "B" && opcion === "A") {
-        posicion = 1
-      } else {
-        posicion = 2
-      }
-    }
 
     this.setState({
-      contador: this.state.contador + posicion,
+      contador: this.state.contador + contadorAux,
       seleccionPrevia: opcion
     })
   }
@@ -48,7 +48,7 @@ export default class App extends Component {
   render() {
     return (
       <div className="layout">
-        <h1 className="historia">{data[this.state.contador].historia}</h1>
+        <h2 className="historia">{data[this.state.contador].historia}</h2>
         <Opciones optionA={data[this.state.contador].opciones.a} optionB={data[this.state.contador].opciones.b} handleClick={this.handleClick} />
         <Recordatorio
           seleccionPrevia={this.state.seleccionPrevia}
